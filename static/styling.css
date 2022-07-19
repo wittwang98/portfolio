@@ -1,0 +1,135 @@
+:root{
+    --fonts: Verdana, Geneva, Tahoma, sans-serif; 
+}
+body{
+    display: grid;
+    background-color:rgb(65, 65, 65);
+    cursor: default;
+    margin: 0;
+}
+
+h1, h2, h3, p{
+    color: black;
+}
+
+h1{
+    font-size: 64pt;
+    font-family:var(--fonts);
+}
+h2{
+    font-size: 32pt;
+    font-family: var(--fonts);
+}
+
+h3{
+    font-size: 22pt;
+    font-family: var(--fonts);
+}
+
+p{
+    font-size: 14pt;
+    font-family: var(--fonts);
+    text-align: justify;
+}
+
+#content{
+    margin-top: 5vh;
+    background-color: rgb(184, 184, 184);
+    width: 100%;
+    display: grid;
+    grid-row: 2fr 1fr;
+    grid-column: 100%;
+    grid-template-areas:
+    "landing"
+    "sections";
+}
+
+#sections{
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-area: sections;
+    min-height: 100px;
+}
+
+#landing
+{
+    display:grid;
+    grid-area: landing;
+    grid-column: 50% 50%;
+    grid-template-areas:
+    "presentation image";
+    column-gap: 10%;
+    row-gap: 10%;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#presentation
+{
+    grid-area: presentation;
+}
+
+#image{
+    grid-area: image;
+    margin: auto;
+}
+
+#image:hover .overlay
+{
+    opacity: 1;
+}
+
+.overlay{
+    transition: .5s ease;
+    background-color: rgba(193, 243, 252, 0.555);
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    opacity: 0;
+    object-fit: cover;
+}
+
+
+#image > img
+{
+    object-fit:contain;
+    max-height: 800px;
+    width: 100%;
+    border-radius: 30% 10% 10% 30%;
+}
+
+.nostyle
+{
+    text-decoration: none;
+
+}
+
+.socials
+{
+    display: inline;
+    width: 64pt;
+}
+
+.socials > img{
+    float: left;
+}
+
+#linkedin
+{
+    grid-area: linkedin;
+}
+
+#sweclockers
+{
+    grid-area: sweclockers;
+}
+
+#socials
+{
+    display: grid;
+    grid-column: min-content min-content;
+    grid-template-areas:
+    "linkedin sweclockers";
+}
